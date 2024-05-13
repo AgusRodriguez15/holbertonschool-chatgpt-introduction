@@ -12,7 +12,7 @@ def factorial(n):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Uso: {} <número>".format(sys.argv[0]), end="")
+        print("Uso: {} <número>".format(sys.argv[0]))
         sys.exit(1)
 
     try:
@@ -20,6 +20,6 @@ if __name__ == "__main__":
         if num < 0:
             print("El número debe ser no negativo.")
         else:
-            print("Factorial de {}: {}".format(num, factorial(num)), end="")
+            print("Factorial de {}: {}".format(num, factorial(num)))
     except ValueError:
         print("Por favor, ingresa un número entero válido.")
