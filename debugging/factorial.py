@@ -1,25 +1,16 @@
 #!/usr/bin/python3
 import sys
 
+if len(sys.argv) < 2:
+    print("INGRESE un número como argumento.")
+    sys.exit(1)
+
 def factorial(n):
-    """
-    Calcula el factorial de un número entero no negativo.
-    """
     result = 1
-    for i in range(1, n + 1):
-        result *= i
+    while n > 0:
+        result *= n
+        n = n - 1
     return result
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Uso: {} <número>".format(sys.argv[0]))
-        sys.exit(1)
-
-    try:
-        num = int(sys.argv[1])
-        if num < 0:
-            print("El número debe ser no negativo.")
-        else:
-            print("Factorial de {}: {}".format(num, factorial(num)))
-    except ValueError:
-        print("Por favor, ingresa un número entero válido.")
+f = factorial(int(sys.argv[1]))
+print(f)
